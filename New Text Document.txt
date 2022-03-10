@@ -1,0 +1,14 @@
+IMPLEMENTATION
+1. Install library and dependencies In the first step, we need to install the pixellib library and its dependencies             (pip install pixellib)
+2. Load pre-trained Mask-RCNN weights As we are going to use the Mas R-CNN model to detect objects, we will 
+  download its pre-trained weights.
+(https://github.com/matterport/Mask_RCNN/releases)
+3. Import libraries Now, we will import the pixellib library that has been installed. We will also import the instance_segmentation class because we are going to detect 
+(import pixellib from pixellib.instance import instance_segmentation)
+4. Instantiate instance segmentation model and load Mask-RCNN weights
+In this step, we will instantiate the instance segmentation class that is provided by pixellib and load the 
+R-CNN model with its pre-trained weights.
+segment_video = instance_segmentation()
+segment_video.load_model("mask_rcnn_coco.h5")
+5. Detect objects
+In this step, we will process the object detection task by Mask R-CNN in a video. A random traffic video is used in which we want to detect vehicle objects.
